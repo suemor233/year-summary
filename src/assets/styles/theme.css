@@ -1,0 +1,20 @@
+:root {
+  --sans-font: system-ui, -apple-system, PingFang SC, 'Microsoft YaHei',
+    Segoe UI, Roboto, Helvetica, noto sans sc, hiragino sans gb, 'sans-serif',
+    Apple Color Emoji, Segoe UI Emoji, Not Color Emoji;
+  --header-bg: rgba(255, 255, 255, 0.623);
+  --dark-header-bg: rgba(0, 0, 0, 0.123);
+  --content-bg: #fff;
+  --dark-content-bg: #333333;
+}
+html {
+  font: 14px/1.15 var(--sans-font);
+  height: 100%;
+  /* scrollbar-width: none; */
+
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
