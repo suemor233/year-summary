@@ -18,18 +18,16 @@ const FirstPage = () => {
       scale: 0.1,
     })
 
-
-
     gsapTime
       .to('.year', {
         x: '0%',
         scale: 1,
-        duration: 1,
+        duration: .8,
         ease: 'back',
       })
       .to('.title', {
         x: '0%',
-        duration: 1,
+        duration: .8,
         scale: 1,
         ease: 'back',
       })
@@ -37,7 +35,7 @@ const FirstPage = () => {
         y: 20,
         repeat: -1,
         yoyo: true,
-        duration: 1.5,
+        duration: 1,
         opacity: 1,
       })
   }, [])
