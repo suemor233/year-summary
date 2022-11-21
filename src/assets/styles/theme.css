@@ -10,11 +10,6 @@
 html {
   font: 14px/1.15 var(--sans-font);
   height: 100%;
-  /* scrollbar-width: none; */
-  /* overflow-x: hidden; */
 }
 
-/* ::-webkit-scrollbar {
-  display: none;
-} */
 

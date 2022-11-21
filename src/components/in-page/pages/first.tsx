@@ -50,7 +50,6 @@ const FirstPage = () => {
         <h1 className="text-9xl font-ui year opacity-0 text-center">2022</h1>
         <h2 className="text-7xl font-bold opacity-0 title">年度总结</h2>
       </div>
-
       <div className="flex-1  text-blue-500 chevron-down text-4xl opacity-0 ">
         <IoChevronDownOutline />
       </div>
