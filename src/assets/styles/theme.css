@@ -7,9 +7,8 @@
   --content-bg: #fff;
   --dark-content-bg: #333333;
 }
+
 html {
   font: 14px/1.15 var(--sans-font);
   height: 100%;
 }
-
-

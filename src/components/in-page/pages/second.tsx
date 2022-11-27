@@ -21,22 +21,26 @@ const SecondPage = () => {
         end: 'top 30%',
       },
     })
-    gsaptime.to('.month', {
-      scale: 1,
-      autoAlpha: 1,
-      rotation: 360,
-      ease: 'power2'
-    }).to('.detail',{
-      autoAlpha: 1,
-    })
+    gsaptime
+      .to('.month', {
+        scale: 1,
+        autoAlpha: 1,
+        rotation: 360,
+        ease: 'power2',
+      })
+      .to('.detail', {
+        autoAlpha: 1,
+      })
   }, [])
   return (
     <div className="h-screen flex  max-w-[52rem] flex-col justify-center">
       <div className="text-5xl month">
-        <h1 className='leading-[1]'>一月,</h1>
-        <h1 className='leading-[2]'>开始了前端的学习</h1>
+        <h1 className="leading-[1]">一月,</h1>
+        <h1 className="leading-[2]">开始了前端的学习</h1>
       </div>
-      <p className="text-3xl detail text-gray-700">因为有少许三件套的基础，我便直接开始了前端工程化的探索</p>
+      <p className="text-3xl detail text-gray-700">
+        因为有少许三件套的基础，我便直接开始了前端工程化的探索
+      </p>
     </div>
   )
 }
