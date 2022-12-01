@@ -39,7 +39,7 @@ const SecondPage = () => {
         <h1 className="leading-[2]">开始了前端的学习</h1>
       </div>
       <p className="text-3xl detail text-gray-700">
-        因为有少许三件套的基础，我便直接开始了前端工程化的探索
+        因为有一点三件套的基础，我便直接开始了前端工程化的探索
       </p>
     </div>
   )
