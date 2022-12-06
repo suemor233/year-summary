@@ -12,6 +12,7 @@ const SecondPage = () => {
     gsap.set('.detail', {
       autoAlpha: 0,
     })
+
     const gsaptime = gsap.timeline({
       scrollTrigger: {
         trigger: '.month',
@@ -32,6 +33,7 @@ const SecondPage = () => {
         autoAlpha: 1,
       })
   }, [])
+  
   return (
     <div className="h-screen flex  max-w-[52rem] flex-col justify-center">
       <div className="text-5xl month">
