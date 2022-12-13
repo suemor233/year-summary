@@ -49,7 +49,7 @@ const PageContent: FC<pageDataType> = ({
   return (
     <>
       <div ref={ref}>
-        {/* <section ref={textRef}>
+        <section ref={textRef}>
           <div className="text-4xl flex flex-col gap-5 text-pink-400">
             <h1>{title},</h1>
             <h2>{subtitle}</h2>
@@ -57,9 +57,9 @@ const PageContent: FC<pageDataType> = ({
           <p className="text-2xl text-pink-400 leading-[1.6] mt-3">
             {description}
           </p>
-        </section> */}
+        </section>
 
-        {/* {image && (
+        {image && (
           <div ref={imageRef} className="w-full flex justify-center">
             <Image
               src={image.src}
@@ -69,7 +69,7 @@ const PageContent: FC<pageDataType> = ({
               className="mt-5"
             />
           </div>
-        )} */}
+        )}
       </div>
     </>
   )

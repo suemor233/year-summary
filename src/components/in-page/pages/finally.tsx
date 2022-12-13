@@ -14,6 +14,7 @@ import { message } from 'react-message-popup'
 import { config } from '~/../config'
 import { useThumbsUpRequest } from '~/api/thumbsUp'
 import { PageLagout } from '~/components/layout/BasicLayout/PageLayout'
+import { isMobile } from '~/utils/mobile'
 
 import { getLike, setLike } from '../../../utils/cookie'
 import useIsomorphicLayoutEffect from '../../layout/AnimationLayout/useIsomorphicLayoutEffect'
@@ -47,12 +48,12 @@ const Finally = () => {
     gsap.set(titleRef.current, {
       scale: 0.1,
       autoAlpha: 0,
-      x: '-50vw',
+      x: isMobile()  ? undefined : '-50vw',
     })
 
     gsap.set(contentRef.current, {
       autoAlpha: 0,
-      x: '100vw',
+      x: isMobile()  ? undefined : '100vw',
     })
 
     gsap.set(buttonRef.current, {

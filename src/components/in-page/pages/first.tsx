@@ -5,6 +5,7 @@ import { IoChevronDownOutline } from 'react-icons/io5'
 
 import { getScrollTop } from '~/utils/scrollTop'
 
+import { isMobile } from '../../../utils/mobile'
 import useIsomorphicLayoutEffect from '../../layout/AnimationLayout/useIsomorphicLayoutEffect'
 
 const FirstPage = () => {
@@ -12,23 +13,24 @@ const FirstPage = () => {
   const yearRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLDivElement>(null)
 
-  const firework = () => confetti({
-    particleCount: 100,
-    spread: 70,
-    origin: { y: 0.7 },
-  })
+  const firework = () =>
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.7 },
+    })
 
   useIsomorphicLayoutEffect(() => {
     const gsapTime = gsap.timeline()
     gsap.set(yearRef.current, {
-      x: '-50vw',
+      x: isMobile() ? undefined : '-50vw',
       opacity: 1,
-      scale: 0.1,
+      scale: 0,
     })
     gsap.set(titleRef.current, {
-      x: '100vw',
+      x: isMobile() ? undefined : '100vw',
       opacity: 1,
-      scale: 0.1,
+      scale: 0,
     })
 
     gsapTime
@@ -63,7 +65,10 @@ const FirstPage = () => {
         'h-[98vh] flex items-center text-3xl flex-col text-blue-400 gap-3 max-w-[52rem]'
       }
     >
-      <div className="flex-[4] justify-center flex flex-col mt-[10rem] cursor-pointer select-none" onClick={firework}>
+      <div
+        className="flex-[4] justify-center flex flex-col cursor-pointer select-none"
+        onClick={firework}
+      >
         <h1
           className="text-9xl font-ui year opacity-0 text-center"
           ref={yearRef}

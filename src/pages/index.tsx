@@ -10,11 +10,11 @@ const Home = () => {
   return (
     <div className="pt-20 flex flex-col items-center w-full">
       <FirstPage />
-      {/* {config.pageData.map((item) => (
+      {config.pageData.map((item) => (
         <PageLagout key={item.title}>
           <PageContent {...item} />
         </PageLagout>
-      ))} */}
+      ))}
       <Finally/>
     </div>
   )
