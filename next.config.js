@@ -2,9 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  experimental:{appDir: true},
   images:{
-    domains: ['y.suemor.com'],
+    domains: ['y.suemor.com','fastly.jsdelivr.net'],
   }
 }
 

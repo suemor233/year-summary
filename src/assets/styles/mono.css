@@ -3,3 +3,8 @@
   src: url('/fonts/FZMiaoWu_GB18030.woff2') format('woff2');
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'loli';
+  src: url('/fonts/loli.otf');
+}

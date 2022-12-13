@@ -1,37 +1,53 @@
+import confetti from 'canvas-confetti'
 import clsx from 'clsx'
 import { gsap } from 'gsap'
-import React from 'react'
-import { useEffect } from 'react'
+import { useRef } from 'react'
 import { IoChevronDownOutline } from 'react-icons/io5'
 
+import { getScrollTop } from '~/utils/scrollTop'
+
+import useIsomorphicLayoutEffect from '../../layout/AnimationLayout/useIsomorphicLayoutEffect'
+
 const FirstPage = () => {
-  useEffect(() => {
+  const iconRef = useRef<HTMLDivElement>(null)
+  const yearRef = useRef<HTMLDivElement>(null)
+  const titleRef = useRef<HTMLDivElement>(null)
+  useIsomorphicLayoutEffect(() => {
     const gsapTime = gsap.timeline()
-    gsap.set('.year', {
+    gsap.set(yearRef.current, {
       x: '-50vw',
       opacity: 1,
       scale: 0.1,
     })
-    gsap.set('.title', {
+    gsap.set(titleRef.current, {
       x: '100vw',
       opacity: 1,
       scale: 0.1,
     })
 
     gsapTime
-      .to('.year', {
+      .to(yearRef.current, {
         x: '0%',
         scale: 1,
         duration: 0.8,
         ease: 'back',
       })
-      .to('.title', {
+      .to(titleRef.current, {
         x: '0%',
         duration: 0.8,
         scale: 1,
         ease: 'back',
+        onComplete: () => {
+          if (getScrollTop() < 250) {
+            confetti({
+              particleCount: 100,
+              spread: 70,
+              origin: { y: 0.7 },
+            })
+          }
+        },
       })
-      .to('.chevron-down', {
+      .to(iconRef.current, {
         y: 20,
         repeat: -1,
         yoyo: true,
@@ -47,10 +63,14 @@ const FirstPage = () => {
       )}
     >
       <div className="flex-[4] justify-center flex flex-col mt-[10rem]">
-        <h1 className="text-9xl font-ui year opacity-0 text-center">2022</h1>
-        <h2 className="text-7xl font-bold opacity-0 title">年度总结</h2>
+        <h1 className="text-9xl font-ui year opacity-0 text-center" ref={yearRef}>2022</h1>
+        <h2 className="text-7xl font-bold opacity-0 title" ref={titleRef}>年度总结</h2>
       </div>
-      <div className="flex-1 text-blue-500 chevron-down text-4xl opacity-0 ">
+      <div
+        className="flex-1 text-blue-500 chevron-down text-5xl opacity-0 "
+        ref={iconRef}
+        
+      >
         <IoChevronDownOutline />
       </div>
     </div>

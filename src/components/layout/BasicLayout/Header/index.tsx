@@ -3,11 +3,16 @@ import Link from 'next/link'
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { IoCloudyNightOutline, IoPartlySunnyOutline } from 'react-icons/io5'
+
 import { useColorMode } from '~/hooks/use-color-mode'
 
 const Header = () => {
   return (
-    <nav className={"min-h-[4rem] bg-[var(--header-bg)] dark:bg-[var(--dark-header-bg)] flex items-center px-2 justify-between fixed w-full shadow z-10 backdrop-blur-sm"}>
+    <nav
+      className={
+        'min-h-[4rem] bg-[var(--header-bg)] dark:bg-[var(--dark-header-bg)] flex items-center px-2 justify-between fixed w-full shadow z-10 backdrop-blur-sm'
+      }
+    >
       <Link className="flex gap-2 items-center cursor-pointer" href={'/'}>
         <Image
           src={'https://y.suemor.com/imagesavatar.jpeg'}
@@ -26,11 +31,19 @@ const Header = () => {
 const Icons = () => {
   const { isDark, toggleColorMode } = useColorMode()
   return (
-    <div className='flex gap-3 items-center'>
-      <Link href={'https://github.com/suemor233'} target='_blank' title='github'>
+    <div className="flex gap-3 items-center">
+      <Link
+        href={'https://github.com/suemor233'}
+        target="_blank"
+        title="github"
+      >
         <FaGithub size={25} />
       </Link>
-      <div    onClick={() => toggleColorMode()} className='cursor-pointer' title= {`当前: ${isDark ? '夜间模式' : '白天模式'}`}>
+      <div
+        onClick={() => toggleColorMode()}
+        className="cursor-pointer"
+        title={`当前: ${isDark ? '夜间模式' : '白天模式'}`}
+      >
         {isDark ? (
           <IoCloudyNightOutline size={20} />
         ) : (

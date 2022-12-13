@@ -4,11 +4,29 @@
     Apple Color Emoji, Segoe UI Emoji, Not Color Emoji;
   --header-bg: rgba(255, 255, 255, 0.623);
   --dark-header-bg: rgba(0, 0, 0, 0.123);
-  --content-bg: #fff;
+  --content-bg: #fafafa;
   --dark-content-bg: #333333;
+  --yellow: #ffc107 !important;
+  --light-bg: #fff;
+  --blue: #96c5f5;
+  --gray: #dfe6e9;
 }
 
 html {
   font: 14px/1.15 var(--sans-font);
   height: 100%;
+  overflow-x: hidden;
+  scrollbar-color: var(--blue) transparent;
+  scrollbar-width: thin;
+  scroll-behavior: unset;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+  background: var(--light-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
 }
