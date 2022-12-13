@@ -6,6 +6,7 @@
     "dev": "next dev -p 1106",
     "build": "next build",
     "start": "next start",
+    "prod:pm2": "cross-env NODE_ENV=production pm2 restart ecosystem.config.js",
     "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore . --fix"
   },
   "dependencies": {
@@ -26,6 +27,7 @@
     "@types/react": "18.0.24",
     "@types/react-dom": "18.0.8",
     "autoprefixer": "^10.4.12",
+    "cross-env": "^7.0.3",
     "eslint": "8.26.0",
     "eslint-config-next": "13.0.0",
     "gsap": "^3.11.3",
