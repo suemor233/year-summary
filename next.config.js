@@ -4,7 +4,8 @@ const nextConfig = {
   swcMinify: true,
   images:{
     domains: ['y.suemor.com','fastly.jsdelivr.net'],
-  }
+  },
+  
 }
 
 module.exports = nextConfig

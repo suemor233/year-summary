@@ -9,12 +9,14 @@ export interface pageDataType {
   }
 }
 
-export const pageData: pageDataType[] = [
+
+
+const pageData: pageDataType[] = [
   {
     title: '一月',
     subtitle: '决定学习前端',
     description: '中职组 Android 开发比赛过后，选择了往前端领域发展。',
-    image: { src: 'https://y.suemor.com/imagessmarthome-prize.jpg' },
+    image: { src: 'https://y.suemor.com/imagessmarthome-prize.jpg'},
   },
   {
     title: '寒假',
@@ -57,7 +59,7 @@ export const pageData: pageDataType[] = [
       '先是强制去参加完去不懂的硬件比赛。又是被莫名其妙的拉进系部创新团队当纯纯工具人，最终自己写了一个失物招领微信小程序。',
     image: {
       src: 'https://fastly.jsdelivr.net/gh/suemor233/static@main/img/IMG_0616.PNG',
-      width:300,
+      width:250,
       height:700
     },
   },
@@ -69,3 +71,12 @@ export const pageData: pageDataType[] = [
     image: { src: 'https://y.suemor.com/imagessuemor-blog-home-3.jpg' },
   },
 ]
+
+
+export const config = {
+  pageData,
+  mxSpace:{
+    apiEndpoint:'http://localhost:2333',
+    note:'10'
+  }
+}

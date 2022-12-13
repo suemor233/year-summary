@@ -1,9 +1,8 @@
-import React from 'react'
-
-import { pageData } from '~/../config'
+import { config } from '~/../config'
+import Finally from '~/components/in-page/pages/finally'
 import FirstPage from '~/components/in-page/pages/first'
+import PageContent from '~/components/layout/BasicLayout/content/PageContent'
 import { PageLagout } from '~/components/layout/BasicLayout/PageLayout'
-import PageContent from '../components/layout/BasicLayout/content/PageContent'
 
 
 
@@ -11,11 +10,12 @@ const Home = () => {
   return (
     <div className="pt-20 flex flex-col items-center w-full">
       <FirstPage />
-      {pageData.map((item) => (
+      {/* {config.pageData.map((item) => (
         <PageLagout key={item.title}>
           <PageContent {...item} />
         </PageLagout>
-      ))}
+      ))} */}
+      <Finally/>
     </div>
   )
 }

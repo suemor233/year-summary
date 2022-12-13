@@ -31,7 +31,7 @@ const PageContent: FC<pageDataType> = ({
       scrollTrigger: {
         trigger: ref.current,
         scrub: 1,
-        markers: true,
+        
         start: 'start 90%',
         end: 'center 60%',
       },
@@ -44,32 +44,32 @@ const PageContent: FC<pageDataType> = ({
         scale: 1,
         autoAlpha:1
       })
-  })
+  },[])
 
   return (
     <>
       <div ref={ref}>
-        <section ref={textRef}>
-          <div className="text-4xl flex flex-col gap-5">
+        {/* <section ref={textRef}>
+          <div className="text-4xl flex flex-col gap-5 text-pink-400">
             <h1>{title},</h1>
             <h2>{subtitle}</h2>
           </div>
-          <p className="text-2xl text-gray-700 leading-[1.6] mt-3">
+          <p className="text-2xl text-pink-400 leading-[1.6] mt-3">
             {description}
           </p>
-        </section>
+        </section> */}
 
-        {image && (
+        {/* {image && (
           <div ref={imageRef} className="w-full flex justify-center">
             <Image
               src={image.src}
               alt="比赛奖状"
-              width={image.width ?? Infinity}
-              height={image.height ?? Infinity}
+              width={image.width ?? 900}
+              height={image.height ?? 600}
               className="mt-5"
             />
           </div>
-        )}
+        )} */}
       </div>
     </>
   )

@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <nav
       className={
-        'min-h-[4rem] bg-[var(--header-bg)] dark:bg-[var(--dark-header-bg)] flex items-center px-2 justify-between fixed w-full shadow z-10 backdrop-blur-sm'
+        'min-h-[4rem] flex items-center px-2 justify-between fixed w-full shadow z-10 backdrop-blur-sm'
       }
     >
       <Link className="flex gap-2 items-center cursor-pointer" href={'/'}>
@@ -21,7 +21,7 @@ const Header = () => {
           alt="头像"
           className="rounded-full"
         />
-        <h1 className="text-xl">2022 年度总结</h1>
+        <h1 className="text-xl text-pink-400">2022 年度总结</h1>
       </Link>
       <Icons />
     </nav>
