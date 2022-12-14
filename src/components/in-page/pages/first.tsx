@@ -76,7 +76,7 @@ const FirstPage = () => {
           2022
         </h1>
         <h2 className="text-7xl font-bold opacity-0 title" ref={titleRef}>
-          年度总结
+          年终总结
         </h2>
       </div>
       <div
