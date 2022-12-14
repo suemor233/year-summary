@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 1106",
+    "dev": "cross-env NODE_ENV=development next dev -p 1106",
     "build": "next build",
     "start": "next start",
     "prod:pm2": "cross-env NODE_ENV=production pm2 restart ecosystem.config.js",

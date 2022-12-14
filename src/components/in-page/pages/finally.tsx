@@ -48,12 +48,12 @@ const Finally = () => {
     gsap.set(titleRef.current, {
       scale: 0.1,
       autoAlpha: 0,
-      x: isMobile()  ? undefined : '-50vw',
+      x: isMobile() ? undefined : '-50vw',
     })
 
     gsap.set(contentRef.current, {
       autoAlpha: 0,
-      x: isMobile()  ? undefined : '100vw',
+      x: isMobile() ? undefined : '100vw',
     })
 
     gsap.set(buttonRef.current, {
@@ -95,6 +95,9 @@ const Finally = () => {
     setTimeout(shoot, 100)
     setTimeout(shoot, 200)
     message.success('点赞成功')
+    if (like?.count) {
+      like.count.like++
+    }
     reFetch()
     setisLike(true)
     setLike('true')
