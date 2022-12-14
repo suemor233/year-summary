@@ -21,7 +21,7 @@ const Header = () => {
           alt="头像"
           className="rounded-full"
         />
-        <h1 className="text-xl text-pink-400">2022 年度总结</h1>
+        <h1 className="text-xl text-pink-400">2022 年终总结</h1>
       </Link>
       <Icons />
     </nav>
@@ -33,7 +33,7 @@ const Icons = () => {
   return (
     <div className="flex gap-3 items-center">
       <Link
-        href={'https://github.com/suemor233'}
+        href={'https://github.com/suemor233/year-summary'}
         target="_blank"
         title="github"
       >
