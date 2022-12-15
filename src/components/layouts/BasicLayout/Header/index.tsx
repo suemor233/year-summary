@@ -4,7 +4,7 @@ import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { IoCloudyNightOutline, IoPartlySunnyOutline } from 'react-icons/io5'
 
-import config from '~/config'
+import config from '~/../config'
 import { useColorMode } from '~/hooks/use-color-mode'
 
 const Header = () => {

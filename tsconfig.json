@@ -17,8 +17,12 @@
     "baseUrl": "./src",
     "noImplicitAny": false,
     "useDefineForClassFields": true,
-    "typeRoots": ["./node_modules/@types"],
-    "lib": ["dom"],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "lib": [
+      "dom"
+    ],
     "outDir": ".next",
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true,
@@ -26,15 +30,21 @@
     "isolatedModules": true,
     "incremental": true,
     "paths": {
-      "~/*": ["./*"],
-      "~": ["."]
-    },
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ]
+      "~/*": [
+        "./*"
+      ],
+      "~": [
+        "."
+      ],
+    }
   },
-  "exclude": [".next", "server/**/*.*"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"]
+  "exclude": [
+    ".next",
+    "server/**/*.*"
+  ],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx"
+  ]
 }

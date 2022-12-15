@@ -6,7 +6,7 @@ node_modules/
 
 # typescript build output
 dist
-config.ts
+/config.ts
 .env
 .DS_Store
 

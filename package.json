@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prepare": "node ./scripts/check-config.js",
     "dev": "cross-env NODE_ENV=development next dev -p 1106",
     "build": "next build",
     "start": "next start",

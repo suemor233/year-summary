@@ -2,10 +2,9 @@ import { gsap } from 'gsap'
 import Image from 'next/image'
 import type { FC } from 'react'
 import { useRef } from 'react'
+import type { CenterConfig } from '~/types/config'
 
 import useIsomorphicLayoutEffect from '../../../hooks/use-isomorphic-layout-effect'
-import type { CenterConfig } from '../../../types/config'
-
 const PageCenter: FC<CenterConfig> = ({
   title,
   subtitle,
