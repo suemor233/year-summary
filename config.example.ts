@@ -1,4 +1,4 @@
-import { defineConfig } from '~/types/config'
+import { defineConfig } from './src/types/config'
 
 export default defineConfig({
   baseConfig: {
