@@ -3,10 +3,12 @@ import { gsap } from 'gsap'
 import { useRef } from 'react'
 import { IoChevronDownOutline } from 'react-icons/io5'
 
+import config from '~/../config'
+import { FirstLagout } from '~/components/layouts/FirstLayout'
+import useIsomorphicLayoutEffect from '~/hooks/use-isomorphic-layout-effect'
+import { isMobile } from '~/utils/mobile'
 import { getScrollTop } from '~/utils/scrollTop'
 
-import { isMobile } from '../../../utils/mobile'
-import useIsomorphicLayoutEffect from '../../layout/AnimationLayout/useIsomorphicLayoutEffect'
 
 const FirstPage = () => {
   const iconRef = useRef<HTMLDivElement>(null)
@@ -60,11 +62,7 @@ const FirstPage = () => {
       })
   }, [])
   return (
-    <div
-      className={
-        'h-[98vh] flex items-center text-3xl flex-col text-blue-400 gap-3 max-w-[52rem]'
-      }
-    >
+    <FirstLagout>
       <div
         className="flex-[4] justify-center flex flex-col cursor-pointer select-none"
         onClick={firework}
@@ -73,10 +71,10 @@ const FirstPage = () => {
           className="text-9xl font-ui year opacity-0 text-center"
           ref={yearRef}
         >
-          2022
+          {config.pagesConfig?.firstConfig?.title || '2022'}
         </h1>
         <h2 className="text-7xl font-bold opacity-0 title" ref={titleRef}>
-          年终总结
+          {config.pagesConfig?.firstConfig?.subtitle || '2022'}
         </h2>
       </div>
       <div
@@ -85,7 +83,7 @@ const FirstPage = () => {
       >
         <IoChevronDownOutline />
       </div>
-    </div>
+    </FirstLagout>
   )
 }
 

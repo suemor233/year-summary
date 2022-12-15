@@ -1,15 +1,12 @@
 import useSWR, { mutate } from 'swr'
 
-import { config } from '~/../config'
+import config from '~/../config'
 
-const fetcher = (url) => fetch(url).then((r) => r.json())
+const fetcher = (url: string) => fetch(url).then((r) => r.json())
 
-export const likeUrl = `${config.mxSpace.apiEndpoint}/notes/nid/${config.mxSpace.note}`
+export const likeUrl = `${config.mxConfig?.apiEndpoint}/notes/nid/${config.mxConfig?.note}`
 export const useThumbsUpRequest = () => {
-  const { data, error, isLoading } = useSWR<likeType>(
-    likeUrl,
-    fetcher,
-  )
+  const { data, error, isLoading } = useSWR<likeType>(likeUrl, fetcher)
 
   const reFetch = () => {
     mutate(likeUrl)
@@ -18,7 +15,7 @@ export const useThumbsUpRequest = () => {
     like: data?.data,
     isLoading,
     isError: error,
-    reFetch
+    reFetch,
   }
 }
 

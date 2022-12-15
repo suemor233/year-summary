@@ -11,13 +11,14 @@ import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import { FiThumbsUp } from 'react-icons/fi'
 import { message } from 'react-message-popup'
 
-import { config } from '~/../config'
-import { useThumbsUpRequest } from '~/api/thumbsUp'
-import { PageLagout } from '~/components/layout/BasicLayout/PageLayout'
+import config from '~/../config'
+import { PageLagout } from '~/components/layouts/BasicLayout/PageLayout'
+import useIsomorphicLayoutEffect from '~/hooks/use-isomorphic-layout-effect'
+import { useThumbsUpRequest } from '~/services/thumbsUp'
+import { getLike, setLike } from '~/utils/cookie'
 import { isMobile } from '~/utils/mobile'
 
-import { getLike, setLike } from '../../../utils/cookie'
-import useIsomorphicLayoutEffect from '../../layout/AnimationLayout/useIsomorphicLayoutEffect'
+
 
 const defaults = {
   spread: 360,
@@ -29,7 +30,7 @@ const defaults = {
   colors: ['FFE400', 'FFBD00', 'E89400', 'FFCA6C', 'FDFFB8'],
 }
 
-const Finally = () => {
+const LastPage = () => {
   const [isLike, setisLike] = useState<boolean>(false)
 
   const titleRef = useRef(null)
@@ -83,7 +84,7 @@ const Finally = () => {
   }, [])
   const handleClick = async () => {
     const res = await fetch(
-      `${config.mxSpace.apiEndpoint}/notes/like/${config.mxSpace.note}`,
+      `${config.mxConfig?.apiEndpoint}/notes/like/${config.mxConfig?.note}`,
     ).then((res) => res.ok)
 
     if (!res) {
@@ -123,11 +124,12 @@ const Finally = () => {
     <PageLagout>
       <div className="text-5xl text-pink-400" ref={titleRef}>
         <h1 className="leading-[2]" ref={titleRef}>
-          最后
+          {config.pagesConfig?.lastConfig?.title || '最后'},
         </h1>
       </div>
       <p className="text-3xl  leading-10 text-pink-400" ref={contentRef}>
-        感谢观看，欢迎与我成为朋友哦。
+        {config.pagesConfig?.lastConfig?.subtitle ||
+          '感谢观看，欢迎与我成为朋友哦。'}
       </p>
       <Button
         className={clsx('mt-7')}
@@ -168,4 +170,4 @@ const Button: FC<
   )
 })
 
-export default Finally
+export default LastPage

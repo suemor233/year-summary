@@ -3,6 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 import { FaGithub } from 'react-icons/fa'
 import { IoCloudyNightOutline, IoPartlySunnyOutline } from 'react-icons/io5'
+import config from '~/../config'
 
 import { useColorMode } from '~/hooks/use-color-mode'
 
@@ -15,13 +16,13 @@ const Header = () => {
     >
       <Link className="flex gap-2 items-center cursor-pointer" href={'/'}>
         <Image
-          src={'https://y.suemor.com/imagesavatar.jpeg'}
+          src={config.headerConfig?.avatar || ''}
           height={33}
           width={33}
           alt="头像"
           className="rounded-full"
         />
-        <h1 className="text-xl text-pink-400">2022 年终总结</h1>
+        <h1 className="text-xl text-pink-400">{config.headerConfig?.title}</h1>
       </Link>
       <Icons />
     </nav>
@@ -33,7 +34,7 @@ const Icons = () => {
   return (
     <div className="flex gap-3 items-center">
       <Link
-        href={'https://github.com/suemor233/year-summary'}
+        href={config.headerConfig?.github || ''}
         target="_blank"
         title="github"
       >

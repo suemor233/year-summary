@@ -1,22 +1,30 @@
-import { config } from '~/../config'
-import Finally from '~/components/in-page/pages/finally'
-import FirstPage from '~/components/in-page/pages/first'
-import PageContent from '~/components/layout/BasicLayout/content/PageContent'
-import { PageLagout } from '~/components/layout/BasicLayout/PageLayout'
+import config from '~/../config'
+import PageCenter from '~/components/in-page/Center'
+import FirstPage from '~/components/in-page/First'
+import LastPage from '~/components/in-page/Last'
 
-
+import { HomeLayout } from '~/components/layouts/BasicLayout/HomeLayout'
+import { PageLagout } from '~/components/layouts/BasicLayout/PageLayout'
 
 const Home = () => {
   return (
-    <div className="pt-20 flex flex-col items-center w-full">
+    <HomeLayout>
       <FirstPage />
-      {config.pageData.map((item) => (
+      <CenterPage />
+      <LastPage />
+    </HomeLayout>
+  )
+}
+
+const CenterPage = () => {
+  return (
+    <>
+      {config.pagesConfig?.centerConfig?.map((item) => (
         <PageLagout key={item.title}>
-          <PageContent {...item} />
+          <PageCenter {...item} />
         </PageLagout>
       ))}
-      <Finally/>
-    </div>
+    </>
   )
 }
 

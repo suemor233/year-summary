@@ -3,11 +3,10 @@ import Image from 'next/image'
 import type { FC } from 'react'
 import { useRef } from 'react'
 
-import type { pageDataType } from '~/../config'
+import useIsomorphicLayoutEffect from '../../../hooks/use-isomorphic-layout-effect'
+import type { CenterConfig } from '../../../types/config'
 
-import useIsomorphicLayoutEffect from '../../AnimationLayout/useIsomorphicLayoutEffect'
-
-const PageContent: FC<pageDataType> = ({
+const PageCenter: FC<CenterConfig> = ({
   title,
   subtitle,
   description,
@@ -25,26 +24,26 @@ const PageContent: FC<pageDataType> = ({
     image &&
       gsap.set(imageRef.current, {
         scale: 0,
-        autoAlpha:0
+        autoAlpha: 0,
       })
     const gsaptime = gsap.timeline({
       scrollTrigger: {
         trigger: ref.current,
         scrub: 1,
-        
+
         start: 'start 90%',
         end: 'center 60%',
       },
     })
-    gsaptime
-      .to(textRef.current, {
+    gsaptime.to(textRef.current, {
+      autoAlpha: 1,
+    })
+    image &&
+      gsaptime.to(imageRef.current, {
+        scale: 1,
         autoAlpha: 1,
       })
-      image && gsaptime.to(imageRef.current, {
-        scale: 1,
-        autoAlpha:1
-      })
-  },[])
+  }, [])
 
   return (
     <>
@@ -75,4 +74,4 @@ const PageContent: FC<pageDataType> = ({
   )
 }
 
-export default PageContent
+export default PageCenter
