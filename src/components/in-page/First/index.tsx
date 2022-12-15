@@ -3,12 +3,11 @@ import { gsap } from 'gsap'
 import { useRef } from 'react'
 import { IoChevronDownOutline } from 'react-icons/io5'
 
-import config from '~/../config'
 import { FirstLagout } from '~/components/layouts/FirstLayout'
+import config from '~/config'
 import useIsomorphicLayoutEffect from '~/hooks/use-isomorphic-layout-effect'
 import { isMobile } from '~/utils/mobile'
 import { getScrollTop } from '~/utils/scrollTop'
-
 
 const FirstPage = () => {
   const iconRef = useRef<HTMLDivElement>(null)

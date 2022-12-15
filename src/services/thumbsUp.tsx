@@ -1,6 +1,6 @@
 import useSWR, { mutate } from 'swr'
 
-import config from '~/../config'
+import config from '~/config'
 
 const fetcher = (url: string) => fetch(url).then((r) => r.json())
 

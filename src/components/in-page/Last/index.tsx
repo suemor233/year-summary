@@ -11,14 +11,12 @@ import { forwardRef, useCallback, useEffect, useRef, useState } from 'react'
 import { FiThumbsUp } from 'react-icons/fi'
 import { message } from 'react-message-popup'
 
-import config from '~/../config'
 import { PageLagout } from '~/components/layouts/BasicLayout/PageLayout'
+import config from '~/config'
 import useIsomorphicLayoutEffect from '~/hooks/use-isomorphic-layout-effect'
 import { useThumbsUpRequest } from '~/services/thumbsUp'
 import { getLike, setLike } from '~/utils/cookie'
 import { isMobile } from '~/utils/mobile'
-
-
 
 const defaults = {
   spread: 360,

@@ -5,8 +5,8 @@ import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import type { FC, PropsWithChildren } from 'react'
 
-import config from '~/../config'
 import Header from '~/components/layouts/BasicLayout/Header'
+import config from '~/config'
 import { gsapPlugins } from '~/utils/plugin'
 
 gsapPlugins.registerAndRun([ScrollTrigger])
